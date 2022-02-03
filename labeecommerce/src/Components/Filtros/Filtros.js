@@ -1,26 +1,32 @@
 import React from "react";
-import styled from "styled-components";
+import { Filtro, GrupoDeFiltros } from "./styled-filtro";
 
-export const GrupoDeFiltros = styled.div`
 
- border: 1px solid black;
-`
+
 
 class Filtros extends React.Component {
     render() {
         return <GrupoDeFiltros>
-            <label>
+
+            <h2>Filtros</h2>
+            <Filtro>
                 Filtros Minimo:
-                <input type={"number"} />
-            </label>
-            <label>
+                <input type={"number"}
+                    value={this.props.minimo}
+                    onChange={this.props.onChangeMinimo} />
+            </Filtro>
+            <Filtro>
                 Filtros Máximo:
-                <input type={"number"} />
-            </label>
-            <label>
+                <input type={"number"}
+                    value={this.props.maximo}
+                    onChange={this.props.onChangeMaximo} />
+            </Filtro>
+            <Filtro>
                 Busca por  nome:
-                <input type={"text"} />
-            </label>
+                <input type={"text"}
+                    value={this.props.buscaPorNome}
+                    onChange={this.props.onChangeBuscarPorNome} />
+            </Filtro>
         </GrupoDeFiltros>
     }
 }
