@@ -7,6 +7,7 @@ export const GrupoDeFiltros = styled.div`
  flex-direction: column;
  padding: 10px;
  
+ 
 `
 
 export const Filtro = styled.label`

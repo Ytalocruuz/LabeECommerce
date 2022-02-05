@@ -1,6 +1,9 @@
 import React from 'react'
+import { ContainerPrincipal, TituloPrincipal } from './AppStyled';
+import { Carinho } from './Components/Carinho/Carinho';
 import Filtros from './Components/Filtros/Filtros';
-import {pacoteDeProdutos} from './pacoteDeProduto'
+import { Produtos } from './Components/Produtos/Produtos';
+import { pacoteDeProdutos } from './pacoteDeProduto'
 
 class App extends React.Component {
 
@@ -31,34 +34,41 @@ class App extends React.Component {
   }
   render() {
 
-     const pacoteFiltradosMinimo = pacoteDeProdutos.filter(produto => {
-       if(this.state.filtroMinimo){
-         return produto.price >= this.state.filtroMinimo
-       }
-     })
+    const pacoteFiltradosMinimo = pacoteDeProdutos.filter(produto => {
+      if (this.state.filtroMinimo) {
+        return produto.price >= this.state.filtroMinimo
+      }
+    })
 
-     const pacoteFiltradosMaximo = pacoteDeProdutos.filter(produto => {
-       if(this.state.filtroMaximo){
-         return produto.price <= this.state.filtroMaximo
-       }else {
-         return produto
-       }
-     })
+    const pacoteFiltradosMaximo = pacoteDeProdutos.filter(produto => {
+      if (this.state.filtroMaximo) {
+        return produto.price <= this.state.filtroMaximo
+      } else {
+        return produto
+      }
+    })
 
-     console.log(pacoteFiltradosMaximo)
+    console.log(pacoteFiltradosMaximo)
 
     return <div>
 
-      <h1>LabECommerce</h1>
-      <Filtros
-        minimo={this.state.filtroMinimo}
-        maximo={this.state.filtroMaximo}
-        buscaPorNome={this.state.filtroBuscarPorNome}
+      <TituloPrincipal><h1>LabECommerce</h1></TituloPrincipal>
 
-        onChangeMinimo={this.manipularValorDoFiltroMinimo}
-        onChangeMaximo={this.manipularValorDoFiltroMaximo}
-        onChangeBuscarPorNome={this.manipularValorDoFiltroBuscarPorNome}
-      />
+      <ContainerPrincipal>
+        <Filtros
+          minimo={this.state.filtroMinimo}
+          maximo={this.state.filtroMaximo}
+          buscaPorNome={this.state.filtroBuscarPorNome}
+
+          onChangeMinimo={this.manipularValorDoFiltroMinimo}
+          onChangeMaximo={this.manipularValorDoFiltroMaximo}
+          onChangeBuscarPorNome={this.manipularValorDoFiltroBuscarPorNome}
+        />
+
+        <Produtos />
+        <Carinho />
+      </ContainerPrincipal>
+
     </div>
   }
 }
