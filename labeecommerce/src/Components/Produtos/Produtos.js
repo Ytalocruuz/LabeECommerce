@@ -1,6 +1,6 @@
 import React from "react";
 import { CartsProdutos } from "./CartsProdutos";
-import { ContainerProdutos, ProdutosHeader } from "./styled";
+import { ContainerProdutos, ProdutosGrid, ProdutosHeader } from "./styled";
 
 
 export class Produtos extends React.Component {
@@ -19,7 +19,14 @@ export class Produtos extends React.Component {
                 </label>
             </ProdutosHeader>
 
-            <CartsProdutos />
+            <ProdutosGrid>
+                <CartsProdutos />
+                <CartsProdutos />
+                <CartsProdutos />
+                <CartsProdutos />
+                <CartsProdutos />
+                <CartsProdutos />
+            </ProdutosGrid>
         </ContainerProdutos>
     }
 }

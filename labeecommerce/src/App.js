@@ -1,9 +1,10 @@
 import React from 'react'
-import { ContainerPrincipal, TituloPrincipal } from './AppStyled';
+import {  ContainerPrincipal, TituloPrincipal } from './AppStyled';
 import { Carinho } from './Components/Carinho/Carinho';
 import Filtros from './Components/Filtros/Filtros';
 import { Produtos } from './Components/Produtos/Produtos';
-import { pacoteDeProdutos } from './pacoteDeProduto'
+import {pacoteDeProdutos} from './pacoteDeProduto';
+
 
 class App extends React.Component {
 
@@ -65,7 +66,7 @@ class App extends React.Component {
           onChangeBuscarPorNome={this.manipularValorDoFiltroBuscarPorNome}
         />
 
-        <Produtos />
+        <Produtos produtos = {pacoteDeProdutos} />
         <Carinho />
       </ContainerPrincipal>
 
