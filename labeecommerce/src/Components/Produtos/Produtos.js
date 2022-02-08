@@ -4,28 +4,40 @@ import { ContainerProdutos, ProdutosGrid, ProdutosHeader } from "./styled";
 
 
 export class Produtos extends React.Component {
+
+
+    state = {
+        sort: 'CRESCENTE'
+    }
+
+    getFilteredAndOrderedList = () => {
+        return this.props.products
+            .filter((product) => product.price < this.props.filtroMinimo)
+            .filter((product) => product.price > this.props.filtroMaximo)
+            .filter((product) => product.nome.includes(this.props.filtroBuscarPorNome))
+            .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.price - b.price : b.price - a.price)
+
+    }
     render() {
+        const filteredAndOrderedList = this.getFilteredAndOrderedList()
         return <ContainerProdutos>
 
             <ProdutosHeader>
 
-                <p>Quantidade de Produtos: 4</p>
+                <p>Quantidade de Produtos: {this.getFilteredAndOrderedList.length}</p>
                 <label>
                     Ordenação:
-                    <select>
-                        <option>Crescente</option>
-                        <option>Decrescente</option>
+                    <select value={this.state.sort}>
+                        <option value={'CRESCENTE'}>Crescente</option>
+                        <option value={'DECRESCENTE'}>Decrescente</option>
                     </select>
                 </label>
             </ProdutosHeader>
 
             <ProdutosGrid>
-                <CartsProdutos />
-                <CartsProdutos />
-                <CartsProdutos />
-                <CartsProdutos />
-                <CartsProdutos />
-                <CartsProdutos />
+                {filteredAndOrderedList.map((product) => {
+                    return <CartsProdutos product={product} />
+                })}
             </ProdutosGrid>
         </ContainerProdutos>
     }

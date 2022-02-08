@@ -3,11 +3,14 @@ import { AddButton, CardContainer, CardInfo} from "./styled";
 
 export class CartsProdutos extends React.Component{
     render(){
+
+        const product = this.props.product
+
         return <CardContainer>
-            <img src={'https://picsum.photos/200/200'} alt="card" />
+            <img src={product.phone} alt="card" />
             <CardInfo>
-               <p>Produto</p>
-               <p>R$100,00</p> 
+               <p>{product.nome}</p>
+               <p>R${product.price},00</p> 
                <AddButton>Adicionar ao carinho</AddButton>
             </CardInfo>
         </CardContainer>

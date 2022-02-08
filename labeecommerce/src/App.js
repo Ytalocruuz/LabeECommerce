@@ -1,17 +1,40 @@
 import React from 'react'
-import {  ContainerPrincipal, TituloPrincipal } from './AppStyled';
+import { ContainerPrincipal, TituloPrincipal } from './AppStyled';
 import { Carinho } from './Components/Carinho/Carinho';
 import Filtros from './Components/Filtros/Filtros';
 import { Produtos } from './Components/Produtos/Produtos';
-import {pacoteDeProdutos} from './pacoteDeProduto';
+import { products } from './product';
 
 
 class App extends React.Component {
 
   state = {
-    filtroMinimo: 0,
-    filtroMaximo: 0,
-    filtroBuscarPorNome: ""
+    filtroMinimo: 100,
+    filtroMaximo: 1000,
+    filtroBuscarPorNome: "",
+    productsInCart: [
+      {
+        id: 2,
+        nome: "Produto legal 2",
+        price: 233,
+        phone: 'https://picsum.photos/200/200',
+        quantity: 1
+      },
+      {
+        id: 2,
+        nome: "Produto legal 2",
+        price: 233,
+        phone: 'https://picsum.photos/200/200',
+        quantity: 1
+      },
+      {
+        id: 2,
+        nome: "Produto legal 2",
+        price: 233,
+        phone: 'https://picsum.photos/200/200',
+        quantity: 1
+      }
+    ]
   }
 
   manipularValorDoFiltroMinimo = (event) => {
@@ -35,13 +58,13 @@ class App extends React.Component {
   }
   render() {
 
-    const pacoteFiltradosMinimo = pacoteDeProdutos.filter(produto => {
+    const pacoteFiltradosMinimo = products.filter(produto => {
       if (this.state.filtroMinimo) {
         return produto.price >= this.state.filtroMinimo
       }
     })
 
-    const pacoteFiltradosMaximo = pacoteDeProdutos.filter(produto => {
+    const pacoteFiltradosMaximo = products.filter(produto => {
       if (this.state.filtroMaximo) {
         return produto.price <= this.state.filtroMaximo
       } else {
@@ -66,8 +89,12 @@ class App extends React.Component {
           onChangeBuscarPorNome={this.manipularValorDoFiltroBuscarPorNome}
         />
 
-        <Produtos produtos = {pacoteDeProdutos} />
-        <Carinho />
+        <Produtos products={products}
+          minimo={this.state.filtroMinimo}
+          maximo={this.state.filtroMaximo}
+          buscaPorNome={this.state.filtroBuscarPorNome} />
+        <Carinho 
+        productsInCart={this.state.productsInCart}/>
       </ContainerPrincipal>
 
     </div>
