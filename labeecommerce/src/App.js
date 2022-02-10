@@ -2,47 +2,65 @@ import React from 'react';
 import { Filters } from './components/Filters/Filters';
 import { Products } from './components/Products/Products';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
-import styled from 'styled-components';
+import { AppContainer, MainTitle} from './AppStyled';
 
-const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  padding: 16px;
-  gap: 8px;
-`;
 
 const products = [
   {
     id: 1,
     name: 'Produto legal',
     price: 123,
-    photo: 'https://picsum.photos/200/200?a=1'
+    photo: 'https://picsum.photos/150/150?a=1'
   },
   {
     id: 2,
     name: 'Produto 2',
     price: 200,
-    photo: 'https://picsum.photos/200/200?a=2'
+    photo: 'https://picsum.photos/150/150?a=2'
   },
   {
     id: 3,
     name: 'Produto 3',
-    price: 30,
-    photo: 'https://picsum.photos/200/200?a=3'
+    price: 32,
+    photo: 'https://picsum.photos/150/150?a=3'
   },
   {
     id: 4,
     name: 'Produto 4',
-    price: 10,
-    photo: 'https://picsum.photos/200/200?a=4'
+    price: 4589,
+    photo: 'https://picsum.photos/150/150?a=4'
+  },
+  {
+    id: 5,
+    name: 'Produto 5',
+    price: 1054,
+    photo: 'https://picsum.photos/150/150?a=5'
+  },
+  {
+    id: 7,
+    name: 'Produto 6',
+    price: 1043,
+    photo: 'https://picsum.photos/150/150?a=6'
+  },
+  {
+    id: 7,
+    name: 'Produto 7',
+    price: 101,
+    photo: 'https://picsum.photos/150/150?a=7'
+  },
+  {
+    id: 7,
+    name: 'Produto 8',
+    price: 104,
+    photo: 'https://picsum.photos/150/150?a=8'
   }
 ]
 
 class App extends React.Component {
   state = {
-    minFilter: 100,
-    maxFilter: 1000,
-    nameFilter: 'Produto',
+    minFilter: 0,
+    maxFilter: 100000,
+    nameFilter: '',
     productsInCart: [
       {
         id: 4,
@@ -114,7 +132,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <AppContainer>
+      <div>
+        <MainTitle>
+        <h1>LabEcomerce</h1>
+        </MainTitle>
+        <AppContainer>
         <Filters
           minFilter={this.state.minFilter}
           maxFilter={this.state.maxFilter}
@@ -135,6 +157,7 @@ class App extends React.Component {
           onRemoveProductFromCart={this.onRemoveProductFromCart}
         />
       </AppContainer>
+      </div>
     );
   }
 }
