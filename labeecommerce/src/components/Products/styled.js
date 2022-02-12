@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 //styled de Produtos
 export const ProductsContainer = styled.div`
+   font-family: 'Open Sans Condensed', sans-serif;
 
 `;
 
@@ -11,6 +12,7 @@ export const ProductsHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+  font-family: 'Open Sans Condensed', sans-serif;
 `
 
 export const ProductsGrid = styled.div`
@@ -18,14 +20,23 @@ export const ProductsGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 10px;
+  margin: 0;
+`
+
+export const Label = styled.label`
+   display: flex;
+   align-items: center;
+   gap: 15px;
+ 
 `
 
 //ProductCard
 
 export const CardContainer = styled.div`
-  border: 1px solid black;
+  border: 1px solid transparent;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const CardInfo = styled.div`
@@ -41,4 +52,10 @@ export const CardInfo = styled.div`
 export const AddToCartButton = styled.button`
   align-self: center;
   margin-top: 4px;
+`
+
+export const Img = styled.img`
+    border-radius: 30%;
+    width: 150px;
+
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ItemContainer } from './styled'
+import { ItemContainer, Button } from './styled'
 
 
 
@@ -9,11 +9,11 @@ export class ShoppingCartItem extends React.Component {
     return <ItemContainer>
       <p>{this.props.cartItem.quantity}x</p>
       <p>{this.props.cartItem.name}</p>
-      <button 
+      <Button 
         onClick={() => this.props.onRemoveProductFromCart(this.props.cartItem.id)}
       >
         Remover
-      </button>
+      </Button>
     </ItemContainer>
   }
 }

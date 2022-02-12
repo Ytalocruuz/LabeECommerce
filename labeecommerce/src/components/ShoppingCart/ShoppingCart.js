@@ -27,7 +27,7 @@ export class ShoppingCart extends React.Component {
                   />
         })}
       </CartListContainer>
-      <p>Valor total: R${this.getTotalValue()},00</p>
+      <p><b>Valor total:</b> R${this.getTotalValue()},00</p>
     </ShoppingCartContainer>
   }
 }

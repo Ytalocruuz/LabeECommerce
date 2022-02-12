@@ -1,6 +1,9 @@
 import React from 'react'
 import { ProductCard } from './ProductCard'
-import {ProductsContainer, ProductsHeader, ProductsGrid } from './styled'
+import { ProductsContainer, ProductsHeader, ProductsGrid, Label } from './styled'
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
 
 
 
@@ -19,21 +22,22 @@ export class Products extends React.Component {
   }
 
   onChangeSort = (event) => {
-    this.setState({sort: event.target.value})
+    this.setState({ sort: event.target.value })
   }
 
   render() {
     const filteredAndOrderedList = this.getFilteredAndOrderedList()
     return <ProductsContainer>
       <ProductsHeader>
-        <p>Quantidade de produtos: {filteredAndOrderedList.length}</p>
-        <label>
-          Ordenação:
-          <select value={this.state.sort} onChange={this.onChangeSort}>
-            <option value={'CRESCENTE'}>Crescente</option>
-            <option value={'DECRESCENTE'}>Decrescente</option>
-          </select>
-        </label>
+        <h4>Quantidade de produtos: {filteredAndOrderedList.length}</h4>
+        <Label>
+        
+          <Select value={this.state.sort} onChange={this.onChangeSort}>
+            <MenuItem value={'CRESCENTE'}>Crescente</MenuItem>
+            <MenuItem value={'DECRESCENTE'}>Decrescente</MenuItem>
+
+          </Select>
+        </Label>
       </ProductsHeader>
       <ProductsGrid>
         {filteredAndOrderedList.map((product) => {

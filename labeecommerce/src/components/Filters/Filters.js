@@ -1,7 +1,6 @@
 import React from 'react'
-import { FiltersContainer, InputContainer, Titlefilter } from './styled.js'
-
-
+import { FiltersContainer, InputContainer, Titlefilter } from './styled.js';
+import Input from '@material-ui/core/Input';
 export class Filters extends React.Component {
   render() {
     return <div>
@@ -11,7 +10,7 @@ export class Filters extends React.Component {
       <FiltersContainer>
         <InputContainer>
           Valor mínimo:
-          <input
+          <Input
             type="number"
             value={this.props.minFilter}
             onChange={this.props.onChangeMinFilter}
@@ -19,7 +18,7 @@ export class Filters extends React.Component {
         </InputContainer>
         <InputContainer>
           Valor máximo:
-          <input
+          <Input
             type="number"
             value={this.props.maxFilter}
             onChange={this.props.onChangeMaxFilter}
@@ -27,7 +26,7 @@ export class Filters extends React.Component {
         </InputContainer>
         <InputContainer>
           Busca por nome:
-          <input
+          <Input
             type="text"
             value={this.props.nameFilter}
             onChange={this.props.onChangeNameFilter}
