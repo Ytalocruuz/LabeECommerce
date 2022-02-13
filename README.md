@@ -15,10 +15,6 @@ Foram desenvolvidos elementos para construção do site usando html, CSS e JavaS
 ## Logo
 <img width="300" src="https://recursos.hippieartesanatos.com/i/sd/conex.png"/>
 
-
-## Participantes
-
-
 ## Link do site no netlify
 
 https://cocky-ramanujan-8009a9.netlify.app/
