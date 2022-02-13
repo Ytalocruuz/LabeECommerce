@@ -2,64 +2,67 @@ import React from 'react';
 import { Filters } from './components/Filters/Filters';
 import { Products } from './components/Products/Products';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
-import { AppContainer, MainTitle} from './AppStyled';
+import { Footer } from './components/Footer/Footer';
+import { AppContainer, MainTitle, ContainerReset, Img} from './AppStyled';
+import Logo from "./Img/Logo.png"
 
 
 const products = [
   {
     id: 1,
-    name: 'Produto legal',
-    price: 123,
-    photo: 'https://picsum.photos/150/150?a=1'
+    name: 'COMPUTADOR PICHAU GAMER ANKOU II, INTEL I5-10400F, GEFORCE GTX 1660 TI 6GB, 16GB DDR4, SSD M.2 480GB',
+    price:  6.598 ,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/f/r/frost-intel-gtx-0001_5.jpg'
   },
   {
     id: 2,
-    name: 'Produto 2',
-    price: 200,
-    photo: 'https://picsum.photos/150/150?a=2'
+    name: 'COMPUTADOR PICHAU GAMER LOG, AMD RYZEN 3 4350G, GEFORCE GTX 1660 6GB, 8GB DDR4, SSD 240GB',
+    price: 4.999,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/s/k/skulanc_pret_amd_rx_5000_6000_1__3_1.jpg'
   },
   {
     id: 3,
-    name: 'Produto 3',
-    price: 32,
-    photo: 'https://picsum.photos/150/150?a=3'
+    name: 'COMPUTADOR MANCER GAMER, AMD RYZEN 3 4350G, 8GB DDR4, SSD 240GB',
+    price: 2.499,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/a/r/argon-amd-sgpu-001_3.jpg'
   },
   {
     id: 4,
-    name: 'Produto 4',
-    price: 4589,
-    photo: 'https://picsum.photos/150/150?a=4'
+    name: 'COMPUTADOR PICHAU GAMER, AMD RYZEN 3 4350G, 16GB DDR4, HD 1TB',
+    price: 2.839,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/s/t/stealth-amd-sgpu-008_2.jpg'
   },
   {
     id: 5,
-    name: 'Produto 5',
-    price: 1054,
-    photo: 'https://picsum.photos/150/150?a=5'
+    name: 'COMPUTADOR PICHAU GAMER, AMD RYZEN 3 4350G, GEFORCE GTX 1050 TI 4GB, 8GB DDR4',
+    price: 3.999,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/k/r/kronen-amd-1650_11__10.jpg'
   },
   {
     id: 7,
-    name: 'Produto 6',
-    price: 1043,
-    photo: 'https://picsum.photos/150/150?a=6'
+    name: 'COMPUTADOR PICHAU GAMER, AMD RYZEN 3 4350G, 8GB DDR4, SSD 240GB',
+    price: 2.299,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/v/e/verizon-mancer-amd-s-gpu-001_1_.jpg'
   },
   {
     id: 7,
-    name: 'Produto 7',
-    price: 101,
-    photo: 'https://picsum.photos/150/150?a=7'
+    name: 'COMPUTADOR MANCER GAMER BASHE, INTEL I5-12400, GEFORCE RTX 2060 6GB, 8GB DDR4, SSD M.2 240GB',
+    price: 7.959,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/s/k/skylancer-wht-intel-gtrx-001_3.jpg'
   },
   {
     id: 7,
-    name: 'Produto 8',
-    price: 104,
-    photo: 'https://picsum.photos/150/150?a=8'
+    name: 'COMPUTADOR PICHAU GAMER TURING II, INTEL I3-10100F, RADEON RX 6600 8GB, 16GB DDR4, SSD 480GB',
+    price: 6.590,
+    photo: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/g/a/gadit-rtb-intel-rx-001_4.jpg'
   }
 ]
 
 class App extends React.Component {
+
   state = {
     minFilter: 0,
-    maxFilter: 100000,
+    maxFilter: 0,
     nameFilter: '',
     productsInCart: [
       {
@@ -132,9 +135,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <ContainerReset>
         <MainTitle>
-        <h1>LabEcomerce</h1>
+        <Img src={Logo} alt="Logo" />
+        <h1>Shopping Computers</h1>
         </MainTitle>
         <AppContainer>
         <Filters
@@ -157,7 +161,8 @@ class App extends React.Component {
           onRemoveProductFromCart={this.onRemoveProductFromCart}
         />
       </AppContainer>
-      </div>
+      <Footer />
+      </ContainerReset>
     );
   }
 }

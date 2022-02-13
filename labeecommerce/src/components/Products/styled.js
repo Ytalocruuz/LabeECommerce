@@ -18,7 +18,8 @@ export const ProductsHeader = styled.div`
 export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap:15px;
+  width: 200px;
   padding: 10px;
   margin: 0;
 `
@@ -44,7 +45,7 @@ export const CardInfo = styled.div`
   flex-direction: column;
   padding: 16px;
 
-  p {
+  h3 {
     margin: 4px 0;
   }
 `

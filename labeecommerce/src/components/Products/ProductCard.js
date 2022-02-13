@@ -13,11 +13,11 @@ export class ProductCard extends React.Component {
       <CardInfo>
         <h3>{product.name}</h3>
         <h3>R${product.price},00</h3>
-        <Button variant="outlined" color="primary"
+      </CardInfo>
+      <Button variant="outlined" color="primary"
         onClick={() => this.props.onAddProductToCart(product.id)}>
           Adicionar ao carrinho
-        </Button>
-      </CardInfo>
+       </Button>
     </CardContainer>
   }
 }
