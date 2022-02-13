@@ -25,3 +25,6 @@ https://cocky-ramanujan-8009a9.netlify.app/
 
 ## Prints do site
 
+![siteEcomerce](https://user-images.githubusercontent.com/72119120/153770425-17729de2-e7de-42e0-bf64-326759fba812.PNG)
+
+
