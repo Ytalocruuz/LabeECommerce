@@ -19,7 +19,7 @@ Foram desenvolvidos elementos para construção do site usando html, CSS e JavaS
 ## Participantes
 
 
-## Link do site no surge
+## Link do site no netlify
 
 https://cocky-ramanujan-8009a9.netlify.app/
 
